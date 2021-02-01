@@ -1,0 +1,84 @@
+.list-item {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .list-enter-active, .list-leave-active {
+    transition: all 1s;
+  }
+  .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+
+
+  #demo {
+  overflow: hidden;
+}
+
+.slide-leave-active,
+.slide-enter-active {
+  transition: 1s;
+}
+.slide-enter {
+  transform: translate(100%, 0);
+}
+.slide-leave-to {
+  transform: translate(-100%, 0);
+}
+
+.img-slider{
+  overflow: hidden;
+  position: relative;
+  height: 200px;
+  width: 400px;
+}
+
+.img-slider img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right:0;
+}
+
+/* Sliding from left to with prev and next */
+#slide-demo {
+    overflow: hidden;
+  }
+  
+  .slide-leave-active,
+  .slide-enter-active {
+    transition: 1s;
+  }
+  .slide-enter {
+    transform: translate(100%, 0);
+  }
+  .slide-leave-to {
+    transform: translate(-100%, 0);
+  }
+  
+  .slideback-leave-active,
+  .slideback-enter-active {
+    transition: 1s;
+  }
+  .slideback-enter {
+    transform: translate(-100%, 0);
+  }
+  .slideback-leave-to {
+    transform: translate(100%, 0);
+  }
+  
+  .div-slider{
+    overflow: hidden;
+    position: relative;
+    height: 100px;
+    width: 90%;
+  }
+  
+  .div-slider .card {
+    position: absolute;
+    height: 100px;
+    width: 90%;
+    background-color: #60adff;
+  }

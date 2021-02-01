@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Learning again</title>
+	<link href="styles.css" rel="stylesheet" />
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+
+
+	<div id="app">
+		{{ message }}
+
+		<ol>
+			<!---Create an instance of the todo -->
+			<todo-item></todo-item>
+		</ol>
+
+
+	</div>
+
+	<div id="app-2">
+		<span v-bind:title="message">
+			Hover your mouse over me for a few
+			seconds to see my dynamically bound title!
+		</span>
+
+	</div>
+
+	<div id="app-3">
+		<span v-if="seen">
+			Now you see me
+		</span>
+
+	</div>
+
+
+	<div id="app-4">
+		<ol>
+			<li v-for="todo in todos">
+				{{todo.text}}
+			</li>
+		</ol>
+	</div>
+
+	<div id="app-5">
+		<p>{{message}}</p>
+		<button v-on:click="reverseMessage">Reverse Message</button>
+	</div>
+
+	<div id="app-6">
+		<p>{{message}}</p>
+		<input v-model="message">
+	</div>
+
+	<div id="app-7">
+		<ol>
+			<!---Now we provide each todo-item with the todo object
+      		it's representing, so that its content can be dynamic.
+      		We also need to provide each component with a "key",
+      		which will be explained later. -->
+			<todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+		</ol>
+	</div>
+
+
+	<div id="app-8">
+		<p>{{ foo }}</p>
+		<!-- this will no longer update `foo`! -->
+		<button v-on:click="foo = 'baz'">Change it</button>
+	</div>
+
+	<div id="components-demo">
+		<button-counter></button-counter>
+		<button-counter></button-counter>
+		<button-counter></button-counter>
+	</div>
+
+
+
+
+	<div id="blog-post-demo">
+		<blog-post v-for="post in posts" 
+		v-bind:key="post.id" 
+		v-bind:title="post.title"></blog-post>
+	</div>
+
+
+	<hr>
+
+	<div id="blog-post-stuff">
+		<blog-post 
+		v-for="post in posts" 
+		v-bind:key="post.id" 
+		v-bind:title="post.title"
+		></blog-post>
+
+	</div>
+
+
+	<hr>
+
+
+
+
+
+
+	<div id="list-demo">
+		<button v-on:click="add">Add</button>
+		<button v-on:click="remove">Remove</button>
+		<transition-group name="list" tag="p">
+		  <span v-for="item in items" v-bind:key="item" class="list-item">
+			{{ item }}
+		  </span>
+		</transition-group>
+	  </div>
+
+	  <div id="demo">
+		<button v-on:click="show = !show">
+		  Toggle
+		</button>
+		<transition name="slide">
+		  <p v-if="show">{{message}}</p>
+		</transition>
+		<h3>
+		  Img slider
+		</h3>
+		<transition-group tag="div" class="img-slider" name="slide">
+		<div v-for="number in [currentImg]" v-bind:key="number" >
+		  <img :src="imgList[Math.abs(currentImg) % imgList.length]"/>
+		</div>
+		</transition-group>
+	   </div>
+
+
+	   <div id="slide-demo">
+      
+		<h3>
+		  div slider
+		</h3>
+		<transition-group tag="div" class="div-slider" :name="back? 'slideback' : 'slide'">
+		 <div v-if="currentIndex === 0" key="1">
+		  <div class="card">
+			DIV 1
+			<div class="picture">
+				
+			</div>
+		  </div>
+		 </div>
+		 <div v-if="currentIndex === 1" key="2" >
+		  <div class="card">
+			DIV 2
+		  </div>
+		 </div>
+		 <div v-if="currentIndex === 2" key="3" >
+		  <div class="card">
+			DIV 1
+		  </div>
+		 </div>
+		</transition-group>
+		<button @click="prev()" >prev</button>
+		<button @click="next()">next</button>
+	   </div>
+	   
+
+
+
+
+
+	<script src="app.js"></script>
+</body>
+
+</html>
