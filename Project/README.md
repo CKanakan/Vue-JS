@@ -1,5 +1,8 @@
 # project
 
+
+This is a website I created using vue js. It contains a carousel, where look through images.
+
 ## Project setup
 ```
 npm install
