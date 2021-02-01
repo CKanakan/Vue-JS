@@ -1,5 +1,7 @@
 # exgames
 
+This is a website I created using vue js.
+
 ## Project setup
 ```
 npm install
